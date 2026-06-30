@@ -12,15 +12,8 @@ def autoImmune(ages, L):
         else:
             low_risk += 1
     
-    if high_risk > L:
-        high_risk_days = (high_risk // L) + (high_risk % L)
-    else:
-        high_risk_days += high_risk
-    
-    if low_risk > L:
-        low_risk_days = (low_risk // L) + (low_risk % L) 
-    else:
-        low_risk_days += low_risk
+    high_risk_days = (high_risk + L - 1) // L
+    low_risk_days = (low_risk + L - 1) // L
     
     return str(high_risk_days + low_risk_days) + " Days"
 
