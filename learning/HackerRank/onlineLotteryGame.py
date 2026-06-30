@@ -1,15 +1,15 @@
-def removeDuplicates(arr):
-    result = []
-    seen = set()
-    for num in arr:
-        if num not in seen:
-            seen.add(num)
-            result.append(num)
-    
-    result.sort(reverse=True)
-    return result[0] + result[1]
-
-
+def solution(arr):
+    product = 0
+    sumValue = 0
+    for i in range(n-1):
+        for j in range(n):
+            if arr[i] * arr[j] > product:
+                product = arr[i] * arr[j]
+                sumValue = arr[i] + arr[j]
+    return sumValue
+     
 n = int(input())
-arr = list(map(int, input().split()))
-print(removeDuplicates(arr))
+arr = []
+for i in range(n):
+    arr.append(int(input()))
+print(solution(arr))
