@@ -60,6 +60,38 @@ class linkedList:
         if self.head is None:
             return
         self.head = self.head.next    
+    
+    # deletion at the end 
+    def deletion_at_end(self):
+        if self.head is None:
+            return
+        if self.head.next is None:
+            self.head = None
+            return
+        temp = self.head
+        while temp.next.next:
+            temp = temp.next
+        temp.next = None
+
+    # search in linked list 
+    def search(self, key):
+        temp = self.head
+        index = 0
+        while temp:
+            if temp.data == key:
+                return index
+            index += 1
+            temp = temp.next
+        return "Element not found"
+
+    # count nodes
+    def count_nodes(self):
+        count = 0
+        temp = self.head
+        while temp:
+            count += 1
+            temp = temp.next
+        return count
 
 
 if __name__ == "__main__":
