@@ -38,6 +38,27 @@ class LinkedList:
 
         temp.next = new_node
 
+    # insert at a specific position 
+    def insert_at_position(self, data, position):
+        if position == 0:
+            self.insert_at_beginning(data)
+            return
+
+        new_node = Node(data)
+        temp = self.head
+        count = 0
+
+        while temp is not None and count < position - 1:
+            temp = temp.next
+            count += 1
+
+        if temp is None:
+            print("Position out of range")
+            return 
+        
+        new_node.next = temp.next
+        temp.next = new_node
+
 if __name__ == "__main__":
     ll = LinkedList()
     ll.head = Node(10)
