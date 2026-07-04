@@ -24,7 +24,7 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
-    # insert at the end
+    # insert at end
     def insert_at_end(self, data):
         new_node = Node(data)
 
@@ -59,7 +59,7 @@ class LinkedList:
         new_node.next = temp.next
         temp.next = new_node
     
-    # deletion at the beginning 
+    # deletion at beginning 
     def deletion_at_beginning(self):
         if self.head is None:
             print("List is empty")
@@ -69,7 +69,7 @@ class LinkedList:
         # temp = self.head
         # self.head = temp.next
 
-    # delete in the end
+    # delete in end
     def delete_in_end(self):
         if self.head is None:
             return "List is empty"
@@ -103,6 +103,26 @@ class LinkedList:
             count += 1
             temp = temp.next
         return count
+    
+    # find second middle of linked list 
+    def find_second_middle(self):
+        slow = self.head
+        fast = self.head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        return slow.data if slow else None
+    
+    # find first middle 
+    def find_first_middle(self):
+        slow = self.head
+        fast = self.head
+        while fast and fast.next.next:
+            slow = slow.next
+            fast = fast.next.next
+        return f"First middle is: {slow.data}" if slow else "No middle"
 
 
 if __name__ == "__main__":
@@ -120,3 +140,5 @@ if __name__ == "__main__":
     ll.print_list()
     print(ll.search(20))
     print(ll.count_nodes())
+    print(ll.find_first_middle())
+    print(ll.find_second_middle())
