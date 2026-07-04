@@ -84,6 +84,17 @@ class LinkedList:
         
         temp.next = None
 
+    # search in linked list 
+    def search(self, key):
+        temp = self.head
+        index = 0
+        while temp:
+            if temp.data == key:
+                return index
+            index += 1
+            temp = temp.next
+        return "Element not found"
+
 if __name__ == "__main__":
     ll = LinkedList()
     ll.head = Node(10)
