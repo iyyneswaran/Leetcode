@@ -94,10 +94,21 @@ class LinkedList:
             index += 1
             temp = temp.next
         return "Element not found"
+    
+    # count nodes
+    def count_nodes(self):
+        count = 0
+        temp = self.head
+        while temp:
+            count += 1
+            temp = temp.next
+        return count
+
 
 if __name__ == "__main__":
     ll = LinkedList()
     ll.head = Node(10)
     ll.head.next = Node(20)
     ll.head.next.next = Node(30)
+    ll.head.next.next.next = Node(40)
     ll.print_list()
