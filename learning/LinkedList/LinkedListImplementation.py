@@ -69,6 +69,21 @@ class LinkedList:
         # temp = self.head
         # self.head = temp.next
 
+    # delete in the end
+    def delete_in_end(self):
+        if self.head is None:
+            return "List is empty"
+        
+        if self.head.next is None:
+            self.head = None
+            return
+
+        temp = self.head
+        while temp.next.next:
+            temp = temp.next
+        
+        temp.next = None
+
 if __name__ == "__main__":
     ll = LinkedList()
     ll.head = Node(10)
