@@ -124,6 +124,17 @@ class linkedList:
                 return "Cycle exists"
         return "No cycle exists"
     
+    def reverse_linkedList(self):
+        prev = None
+        curr = self.head
+        while curr:
+            next_node = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next_node
+        self.head = prev
+        self.traversing()
+    
 
 if __name__ == "__main__":
     ll = linkedList()
@@ -136,3 +147,4 @@ if __name__ == "__main__":
     ll.traversing()
     print(ll.find_first_middle())
     print(ll.find_second_middle())
+    print(ll.reverse_linkedList)
