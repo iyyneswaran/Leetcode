@@ -133,7 +133,6 @@ class linkedList:
             prev = curr
             curr = next_node
         self.head = prev
-        self.traversing()
     
 
 if __name__ == "__main__":
@@ -147,4 +146,3 @@ if __name__ == "__main__":
     ll.traversing()
     print(ll.find_first_middle())
     print(ll.find_second_middle())
-    print(ll.reverse_linkedList)
