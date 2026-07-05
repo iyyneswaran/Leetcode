@@ -113,6 +113,17 @@ class linkedList:
             fast = fast.next.next
         return f"First middle is: {slow.data}" if slow else "No middle"
 
+    # detect cycle in linked list 
+    def cycle(self):
+        slow = self.head
+        fast = self.head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                return "Cycle exists"
+        return "No cycle exists"
+    
 
 if __name__ == "__main__":
     ll = linkedList()
