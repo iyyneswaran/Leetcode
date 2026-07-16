@@ -1,0 +1,1 @@
+print("Odd" if (int(input()) & 1) == 1 else "Even")
