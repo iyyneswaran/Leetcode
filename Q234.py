@@ -30,3 +30,15 @@ class Solution:
             first = first.next
             second = second.next
         return True
+
+
+# or  
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        arr = []
+
+        while head:
+            arr.append(head.val)
+            head = head.next
+
+        return arr == arr[::-1]
