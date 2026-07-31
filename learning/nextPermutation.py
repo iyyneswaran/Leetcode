@@ -19,6 +19,8 @@ def nextPermutation(n, nums):
         left += 1
         right += 1
 
+    return nums
+
 length = int(input())
 nums = list(map(int, input().split()))
 print(nextPermutation(length, nums))
