@@ -19,3 +19,9 @@ class ArrayStack:
         self.arr[self.top] = None
         self.top -= 1
         return val
+
+    # It only check the top element but does not remove it 
+    def peek(self):
+        if self.is_empty():
+            raise IndexError("Stack underflow")
+        return self.arr[self.top]
