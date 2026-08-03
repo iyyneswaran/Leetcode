@@ -14,3 +14,13 @@ class LinkedList:
         node.next = self.head
         self.head = node
         self._size += 1
+
+    def pop(self):
+        if self.is_empty():
+            raise IndexError("Stack underflow")
+        val = self.head.val
+        self.head = self.head.next
+        self._size -= 1
+        return val
+
+    
