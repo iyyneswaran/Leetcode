@@ -25,3 +25,9 @@ class ArrayStack:
         if self.is_empty():
             raise IndexError("Stack underflow")
         return self.arr[self.top]
+
+    # Return True if stack has no element i.e., top = -1
+    def is_empty(self):
+        return self.top == -1
+
+    
