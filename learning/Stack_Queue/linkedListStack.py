@@ -27,4 +27,7 @@ class LinkedList:
         if self.is_empty():
             raise IndexError("Stack is empty")
         return self.head.val
+
+    def is_empty(self):
+        return self.head is None
     
