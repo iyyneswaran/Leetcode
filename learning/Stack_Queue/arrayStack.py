@@ -23,7 +23,7 @@ class ArrayStack:
     # It only check the top element but does not remove it 
     def peek(self):
         if self.is_empty():
-            raise IndexError("Stack underflow")
+            raise IndexError("Stack is empty")
         return self.arr[self.top]
 
     # Return True if stack has no element i.e., top = -1

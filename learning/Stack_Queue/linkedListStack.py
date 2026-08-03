@@ -23,4 +23,8 @@ class LinkedList:
         self._size -= 1
         return val
 
+    def peek(self):
+        if self.is_empty():
+            raise IndexError("Stack is empty")
+        return self.head.val
     
