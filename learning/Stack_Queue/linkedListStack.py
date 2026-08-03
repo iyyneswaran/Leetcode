@@ -30,4 +30,6 @@ class LinkedList:
 
     def is_empty(self):
         return self.head is None
-    
+
+    def size(self):
+        return self._size
