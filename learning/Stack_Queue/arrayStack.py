@@ -30,4 +30,7 @@ class ArrayStack:
     def is_empty(self):
         return self.top == -1
 
+    def size(self):
+        return self.top + 1
+
     
