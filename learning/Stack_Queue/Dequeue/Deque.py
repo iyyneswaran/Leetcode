@@ -19,4 +19,14 @@ class Deque:
             self.head.prev = node
             self.head = node
         self._size += 1
+
+    def push_back(self, val):
+        node = DNode(val)
+        if not self.tail:
+            self.head = self.tail = node
+        else:
+            node.prev = self.tail
+            self.tail = node
+        self._size += 1
+
     
