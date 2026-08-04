@@ -52,5 +52,6 @@ class Deque:
             self.head = None
         self._size -= 1
         return val
-        
+
+    
  
