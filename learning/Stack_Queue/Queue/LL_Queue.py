@@ -30,3 +30,9 @@ class LinkedlistQueue:
 
     def is_empty(self):
         return self.head is None
+
+    def front(self):
+        if self.is_empty():
+            raise IndexError("Queue is empty")
+        return self.head.val
+    
