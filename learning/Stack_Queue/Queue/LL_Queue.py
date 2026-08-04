@@ -9,5 +9,13 @@ class LinkedlistQueue:
         self.tail = None
         self._size = 0
 
-    
+    def enqueue(self, val):
+        node = Node(val)
+        if self.tail is None:
+            self.head = self.tail = node
+        else:
+            self.tail.next = node
+            tail = node
+        self._size += 1
 
+    
