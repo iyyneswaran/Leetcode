@@ -41,4 +41,16 @@ class Deque:
         self._size -= 1
         return val
     
-            
+    def pop_back(self):
+        if not self.tail:
+            raise IndexError("Deque is empty")
+        val = self.tail.val
+        self.tail = self.tail.prev
+        if self.tail:
+            self.tail.next = None
+        else:
+            self.head = None
+        self._size -= 1
+        return val
+        
+ 
