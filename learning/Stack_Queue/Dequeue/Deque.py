@@ -29,4 +29,16 @@ class Deque:
             self.tail = node
         self._size += 1
 
+    def pop_front(self):
+        if not self.head:
+            raise IndexError("Deque is empty")
+        val = self.head.val
+        self.head = self.head.next
+        if self.head:
+            self.head.prev = None
+        else:
+            self.tail = None
+        self._size -= 1
+        return val
     
+            
