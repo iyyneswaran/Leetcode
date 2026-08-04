@@ -31,7 +31,8 @@ class DoublyLinkedListStack:
     def peek(self):
         if self.head is None:
             raise IndexError("Stack is empty")
-
+        return self.head
+    
     def is_empty(self):
         return self.head is None
 
