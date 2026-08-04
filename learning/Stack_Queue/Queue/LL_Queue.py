@@ -35,4 +35,6 @@ class LinkedlistQueue:
         if self.is_empty():
             raise IndexError("Queue is empty")
         return self.head.val
-    
+
+    def size(self):
+        return self._size
