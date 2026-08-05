@@ -20,7 +20,7 @@ def decreasingMS2(arr: list) -> list:
             result[idx] = arr[i]
         stack.append(i)
 
-    return result
+    return result   
 
 
 arr = list(map(int, input().split()))
