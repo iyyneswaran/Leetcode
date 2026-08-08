@@ -12,4 +12,4 @@ def previous_smaller_number(nums: list) -> list:
     return ans
 
 nums = list(map(int, input().split()))
-print(previous_smaller_number(nums))
+print(previous_smaller_number(nums))    
