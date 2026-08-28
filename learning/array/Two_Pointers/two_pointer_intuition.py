@@ -1,5 +1,5 @@
 def two_sum_sorted_array(arr, target):
-    left, right = 0, len(arr)
+    left, right = 0, len(arr) - 1
     while left < right:
         curr = arr[left] + arr[right]
         if curr == target:
