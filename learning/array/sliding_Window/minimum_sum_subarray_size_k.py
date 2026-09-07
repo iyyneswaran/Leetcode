@@ -1,5 +1,5 @@
 def minimumSum(nums: List[int], k: int) -> int:
-    if k <= 0 or k > len(arr):
+    if k <= 0 or k > len(nums):
         raise ValueError("Invalid window size")
     
     minimum_sum = float("inf")
@@ -14,4 +14,4 @@ def minimumSum(nums: List[int], k: int) -> int:
 
 nums = list(map(int, input().split()))
 k = int(input())
-(minimumSum(nums, k))
+print(minimumSum(nums, k))
