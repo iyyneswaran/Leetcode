@@ -1,16 +1,13 @@
-# brute force
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
-        result = []
-        window = arr[:k]
-        for i in range(k, len(nums)):
-            for num in window:
-                if num < 0:
-                    result.append(nums[j])
-                    break
-            window.popleft()
-            window.append(nums[i])
+        window_sum = 0
+        answer, l_ptr = float('inf'), 0
+        
+        for r_ptr in range(len(nums)):
+            window_sum += nums[r_ptr]
+            while window_sum >= target:
+                answer = min(answer, r_ptr - l_ptr + 1)
+                window_sum -= nums[l_ptr]
+                l_ptr += 1
 
-        return 0
-
-# optimal solution using deque:
+        return 0 if answer == float('inf') else answer
