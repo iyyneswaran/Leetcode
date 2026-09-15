@@ -14,7 +14,7 @@ def longest_valid_window(nums: List[int], sumValue: int) -> int:
             left += 1
 
         best = max(best, right - left + 1)
-
+ 
     return best
 
 nums = list(map(int, input().split()))
