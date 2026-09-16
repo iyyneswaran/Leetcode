@@ -5,12 +5,12 @@ def zeros(nums: List[int]) -> int:
     left = 0
     best = float('inf')
     for right in range(len(nums)):
-        if nums[right] == 1:
+        if nums[right] == 0:
             count += 1
         while count >= 3:
             best = min(best, right - left + 1)
             out = nums[left]
-            if out == 1:
+            if out == 0:
                 count -= 1
             left += 1 
 
