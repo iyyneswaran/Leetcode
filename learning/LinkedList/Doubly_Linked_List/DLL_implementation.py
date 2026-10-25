@@ -85,7 +85,7 @@ class DoublyLinkedList:
             return True
 
         new = Node(data)
-        
+
         new.prev = curr.prev
         new.next = curr
         curr.prev.next = new
@@ -108,18 +108,30 @@ class DoublyLinkedList:
         else:
             self.head = current.next
 
-        def delete_at_beginning(self):
-            if self.head is None:
-                return False
+    def delete_at_beginning(self):
+        if self.head is None:
+            return False
 
-            removed = self.head
-            self.head = removed.next
+        removed = self.head
+        self.head = removed.next
 
-            if self.head is not None:
-                self.head.prev = None
-            else:
-                self.tail = None
+        if self.head is not None:
+            self.head.prev = None
+        else:
+            self.tail = None
 
-            removed.next= None
+        removed.next= None
 
-            return True
+        return True
+
+    def reverse_dll(self):
+        curr = self.head
+        while curr:
+            next_node = curr.next
+            curr.next = curr.prev
+            curr.prev = next_node
+            curr = next_node
+        self.head, self.tail = self.tail, self.head
+
+
+
