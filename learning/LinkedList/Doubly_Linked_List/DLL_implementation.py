@@ -47,7 +47,7 @@ class DoublyLinkedList:
         self.tail.next = new
         self.tail = new
 
-    # inserting a new node after a given node
+    # inserting a new node after a given node with value "data":
     def insert_after(self, node, data):
         if self.node is None:
             return
@@ -61,6 +61,39 @@ class DoublyLinkedList:
 
         node.next = new_Node
 
+    # inserting a new node in a specific index:
+    def insert_at_index(self, data, index):
+        if index < 0:
+            return False
+        
+        if index == 0:
+            self.insert_beginning(data)
+            return True
+
+        curr = self.head
+        position = 0
+
+        while curr and position < index:
+            curr = curr.next
+            position += 1
+
+        if position != index:
+            return False
+
+        if curr is None:
+            self.insert_end(data)
+            return True
+
+        new = Node(data)
+        
+        new.prev = curr.prev
+        new.next = curr
+        curr.prev.next = new
+        curr.prev = new
+            
+        return True
+
+    # delete a node with specific value:
     def delete_value(self, value):
         current = self.head
 
@@ -75,4 +108,18 @@ class DoublyLinkedList:
         else:
             self.head = current.next
 
-        
+        def delete_at_beginning(self):
+            if self.head is None:
+                return False
+
+            removed = self.head
+            self.head = removed.next
+
+            if self.head is not None:
+                self.head.prev = None
+            else:
+                self.tail = None
+
+            removed.next= None
+
+            return True
