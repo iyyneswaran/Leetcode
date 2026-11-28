@@ -17,7 +17,7 @@ class Solution:
         word1_hash.values()
     ) == sorted(word2_hash.values())
 
-
+# or 
 class Solution:
 
   def closeStrings(self, word1: str, word2: str) -> bool:
